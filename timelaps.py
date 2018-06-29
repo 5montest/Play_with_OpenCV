@@ -22,12 +22,10 @@ def main():
     first = 0
     
     global cnt
-
     while True:
         cnt = int(cnt)
         if first == 1:
             time.sleep(laptime)
-
             ret, frame = cap.read()
             if ret:
                 cv2.imwrite("data/image"+str(cnt)+".jpg",frame)
@@ -51,3 +49,4 @@ if __name__ == '__main__':
             mai += 1
         print("done")
         video.release()
+        cv2.destroyAllWindows()
